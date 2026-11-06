@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171b18">
+<title>RESIDUOELECTRIC | Energía que transforma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#171b18;--ink2:#202720;--cream:#eee9dc;--paper:#f8f5ed;--muted:#a9aa9e;--green:#82934c;--lime:#b5c66b;--copper:#c77742;--line:rgba(238,233,220,.17)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--cream);font-family:"DM Sans",sans-serif}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(1160px,91%);margin:auto}.eyebrow{color:var(--lime);font-size:.72rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase}.display{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:-.02em}.topline{height:5px;background:linear-gradient(90deg,var(--green),var(--copper),var(--lime))}.nav{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px;font-family:"Barlow Condensed";font-weight:800;font-size:1.55rem;letter-spacing:.04em}.brand-mark{width:39px;height:39px;border:2px solid var(--lime);display:grid;place-items:center;transform:rotate(45deg);color:var(--lime);font-size:1.15rem}.brand-mark span{transform:rotate(-45deg)}.brand small{display:block;font:600 .52rem "DM Sans";letter-spacing:.22em;color:var(--muted)}.navlinks{display:flex;align-items:center;gap:27px;font-size:.82rem;color:#d0d0c5}.navlinks a:hover{color:var(--lime)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 19px;background:var(--lime);color:var(--ink);font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border:0;cursor:pointer;transition:.25s}.nav-cta:hover,.btn:hover{background:var(--copper);color:white;transform:translateY(-2px)}.menu{display:none;background:none;border:1px solid var(--line);color:white;padding:9px 12px;font-size:1.2rem}
+.hero{min-height:650px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:35px;padding:70px 0 78px;position:relative}.hero:after{content:"";position:absolute;right:0;bottom:0;width:45%;height:1px;background:var(--line)}.hero-copy{position:relative;z-index:1}.hero h1{font-size:clamp(4rem,8vw,7.6rem);margin:22px 0 24px;max-width:680px}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{max-width:530px;color:#c0c1b5;line-height:1.8;font-size:1rem}.hero-actions{display:flex;gap:13px;align-items:center;margin-top:32px;flex-wrap:wrap}.btn-outline{display:inline-flex;padding:12px 18px;border:1px solid var(--line);font-size:.78rem;text-transform:uppercase;font-weight:700;letter-spacing:.06em}.btn-outline:hover{border-color:var(--lime);color:var(--lime)}.hero-note{font-size:.72rem;color:var(--muted);margin-top:22px}.hero-image{height:500px;position:relative;background:#333;overflow:hidden}.hero-image img{width:100%;height:100%;object-fit:cover;filter:brightness(.72) saturate(.75)}.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,19,16,.7),transparent 60%),linear-gradient(90deg,rgba(15,19,16,.25),transparent)}.image-tag{position:absolute;z-index:2;left:25px;bottom:25px;border-left:3px solid var(--lime);padding-left:14px}.image-tag strong{display:block;font:700 1.7rem "Barlow Condensed";text-transform:uppercase}.image-tag span{font-size:.7rem;color:#d5d4c8;letter-spacing:.1em;text-transform:uppercase}
+.ticker{background:var(--lime);color:var(--ink);padding:15px 0;overflow:hidden;white-space:nowrap;font:700 1rem "Barlow Condensed";letter-spacing:.1em;text-transform:uppercase}.ticker div{display:inline-block;animation:marquee 28s linear infinite}.ticker span{padding:0 30px}@keyframes marquee{to{transform:translateX(-50%)}}
+.section{padding:100px 0}.section-head{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:43px}.section h2{font-size:clamp(3rem,5vw,5rem);margin:13px 0 0}.section-intro{max-width:390px;color:var(--muted);font-size:.9rem;line-height:1.8}.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.problem-card{min-height:260px;padding:30px;background:var(--ink2);border:1px solid var(--line);position:relative;overflow:hidden}.problem-card .num{font:700 4.5rem "Barlow Condensed";color:rgba(181,198,107,.25)}.problem-card h3{font:700 1.7rem "Barlow Condensed";text-transform:uppercase;margin:8px 0}.problem-card p{color:var(--muted);max-width:440px;line-height:1.75;font-size:.88rem}.problem-card:after{content:"";position:absolute;width:120px;height:120px;border:1px solid rgba(181,198,107,.2);border-radius:50%;right:-38px;bottom:-45px}
+.process{background:var(--paper);color:var(--ink);padding:95px 0}.process .eyebrow{color:#66763c}.process .section-intro{color:#686b60}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#d4d0c4}.step{background:var(--paper);padding:28px 23px;min-height:245px}.step b{font:700 3.5rem "Barlow Condensed";color:var(--copper)}.step h3{font:700 1.35rem "Barlow Condensed";text-transform:uppercase;margin:15px 0 9px}.step p{color:#686b60;font-size:.83rem;line-height:1.7}
+.services{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;align-items:center}.services-photo{height:560px;position:relative}.services-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.25) brightness(.78)}.photo-caption{position:absolute;left:0;bottom:0;background:var(--copper);color:white;padding:18px 22px;font:700 1.2rem "Barlow Condensed";text-transform:uppercase}.service-list{margin-top:30px}.service{padding:20px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:50px 1fr;gap:15px}.service .icon{color:var(--lime);font-size:1.5rem}.service h3{margin:0 0 7px;font:700 1.35rem "Barlow Condensed";text-transform:uppercase}.service p{margin:0;color:var(--muted);font-size:.84rem;line-height:1.7}
+.impact{background:#222a21;padding:90px 0}.impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:40px}.impact-card{padding:27px;border:1px solid var(--line);min-height:190px}.impact-card span{font-size:1.5rem;color:var(--lime)}.impact-card h3{font:700 1.5rem "Barlow Condensed";text-transform:uppercase;margin:18px 0 8px}.impact-card p{font-size:.82rem;line-height:1.7;color:var(--muted);margin:0}
+.cta{padding:95px 0;background:var(--copper);color:#fff;position:relative;overflow:hidden}.cta:after{content:"⚡";position:absolute;font-size:22rem;opacity:.07;right:4%;top:-80px}.cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:30px}.cta h2{font-size:clamp(3rem,6vw,5.5rem);margin:15px 0;max-width:680px}.cta p{color:#f2d9c7;max-width:530px;line-height:1.7}.cta .btn{background:var(--ink);color:white}.contact{padding:95px 0}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px}.contact-copy p{color:var(--muted);line-height:1.8;font-size:.9rem}.contact-form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}.field label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--lime);font-weight:700}.field input,.field textarea{background:#222720;border:1px solid var(--line);padding:14px;color:white;outline:none}.field input:focus,.field textarea:focus{border-color:var(--lime)}.field textarea{min-height:120px;resize:vertical}.contact-form .btn{grid-column:1/-1;justify-self:start}.form-note{grid-column:1/-1;color:var(--muted);font-size:.72rem}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.75rem}.footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-brand{font:700 1.3rem "Barlow Condensed";color:var(--cream);letter-spacing:.05em}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:850px){.navlinks{display:none;position:absolute;top:82px;left:0;right:0;background:var(--ink2);padding:24px 5%;z-index:10;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.menu{display:block}.nav-cta{display:none}.hero{grid-template-columns:1fr;padding:60px 0}.hero-image{height:390px}.section-head,.cta-inner{display:block}.section-intro{margin-top:22px}.services{grid-template-columns:1fr;gap:35px}.services-photo{height:380px}.process-grid{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr;gap:30px}}
+@media(max-width:560px){.hero h1{font-size:4.1rem}.hero-image{height:300px}.section{padding:72px 0}.problem-grid,.impact-grid,.process-grid{grid-template-columns:1fr}.problem-card{min-height:210px}.contact-form{grid-template-columns:1fr}.field.full,.contact-form .btn,.form-note{grid-column:auto}.footer-row{align-items:flex-start;flex-direction:column}.cta{padding:75px 0}}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header class="wrap nav">
+  <a class="brand" href="#inicio"><span class="brand-mark"><span>⚡</span></span><span>RESIDUOELECTRIC<small>ENERGÍA QUE TRANSFORMA</small></span></a>
+  <nav class="navlinks" id="navlinks"><a href="#nosotros">Nosotros</a><a href="#solucion">La solución</a><a href="#servicios">Servicios</a><a href="#impacto">Impacto</a><a href="#contacto">Contacto</a></nav>
+  <a class="nav-cta" href="#contacto">Hablemos del proyecto ↗</a>
+  <button class="menu" id="menu" aria-label="Abrir menú">☰</button>
+</header>
+<main>
+<section class="wrap hero" id="inicio">
+ <div class="hero-copy">
+  <div class="eyebrow">Energía · Innovación · Biomasa</div>
+  <h1 class="display">Del residuo<br>a la <em>energía.</em></h1>
+  <p>Convertimos residuos orgánicos y agroindustriales en una nueva fuente de energía eléctrica. Una solución que aprovecha lo que hoy se desecha para impulsar comunidades y producción.</p>
+  <div class="hero-actions"><a class="btn" href="#solucion">Conoce nuestra propuesta ↘</a><a class="btn-outline" href="#contacto">Contáctanos</a></div>
+  <div class="hero-note">UN MODELO DE ENERGÍA CON RAÍCES EN LA TIERRA.</div>
+ </div>
+ <div class="hero-image"><img src="https://images.unsplash.com/photo-1473341304170-971161f621d3?auto=format&fit=crop&w=1400&q=85" alt="Torres de transmisión eléctrica al atardecer"><div class="image-tag"><strong>Potencia para el futuro</strong><span>Generación eléctrica a partir de biomasa</span></div></div>
+</section>
+<div class="ticker"><div><span>♻ Energía circular</span><span>✳ Aprovechamiento de residuos</span><span>⚡ Desarrollo sostenible</span><span>♻ Energía circular</span><span>✳ Aprovechamiento de residuos</span><span>⚡ Desarrollo sostenible</span></div></div>
+<section class="section wrap" id="nosotros">
+ <div class="section-head reveal"><div><div class="eyebrow">01 / El desafío</div><h2 class="display">Un problema.<br>Una oportunidad.</h2></div><p class="section-intro">En municipios y zonas productivas, los residuos agrícolas, orgánicos y ganaderos se acumulan mientras crece la necesidad de energía eléctrica. Nosotros vemos en ese desafío una oportunidad.</p></div>
+ <div class="problem-grid">
+  <article class="problem-card reveal"><div class="num">01</div><h3>Residuos sin aprovechar</h3><p>Grandes cantidades de desechos orgánicos y agroindustriales que pueden convertirse en materia prima útil.</p></article>
+  <article class="problem-card reveal"><div class="num">02</div><h3>Demanda de energía</h3><p>Hogares, productores y actividades locales necesitan energía confiable para desarrollar sus actividades.</p></article>
+ </div>
+</section>
+<section class="process" id="solucion"><div class="wrap">
+ <div class="section-head reveal"><div><div class="eyebrow">02 / Nuestra propuesta</div><h2 class="display">La fuerza de<br>la biomasa.</h2></div><p class="section-intro">Proponemos implementar una planta generadora que transforme residuos orgánicos en electricidad mediante un proceso controlado y eficiente.</p></div>
+ <div class="process-grid">
+  <article class="step reveal"><b>01</b><h3>Recolección</h3><p>Acopiamos residuos agrícolas, orgánicos y ganaderos de productores y puntos de generación.</p></article>
+  <article class="step reveal"><b>02</b><h3>Preparación</h3><p>Clasificamos y acondicionamos la materia orgánica para su aprovechamiento energético.</p></article>
+  <article class="step reveal"><b>03</b><h3>Conversión</h3><p>La biomasa se procesa en una planta diseñada para producir energía aprovechable.</p></article>
+  <article class="step reveal"><b>04</b><h3>Electricidad</h3><p>La energía generada puede abastecer necesidades locales y, según la viabilidad técnica y normativa, integrarse a una red.</p></article>
+ </div>
+</div></section>
+<section class="section wrap" id="servicios">
+ <div class="services">
+  <div class="services-photo reveal"><img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1200&q=85" alt="Instalación industrial y energía"><div class="photo-caption">Ingeniería con propósito</div></div>
+  <div class="reveal"><div class="eyebrow">03 / Qué ofrecemos</div><h2 class="display">Energía para<br>mover lo que<br>importa.</h2><p class="section-intro">Un proyecto pensado para conectar la gestión de residuos con la generación eléctrica y el desarrollo productivo.</p>
+   <div class="service-list">
+    <article class="service"><div class="icon">⚡</div><div><h3>Generación eléctrica</h3><p>Producción de energía a partir del aprovechamiento de biomasa orgánica.</p></div></article>
+    <article class="service"><div class="icon">♻</div><div><h3>Gestión de materia prima</h3><p>Articulación con productores, comunidades y generadores de residuos para su recolección y preparación.</p></div></article>
+    <article class="service"><div class="icon">⌁</div><div><h3>Abastecimiento energético</h3><p>Orientación a hogares, pequeños productores y actividades que requieren suministro eléctrico.</p></div></article>
+   </div>
+  </div>
+ </div>
+</section>
+<section class="impact" id="impacto"><div class="wrap">
+ <div class="section-head reveal"><div><div class="eyebrow">04 / El impacto</div><h2 class="display">Más que energía.<br>Un cambio real.</h2></div><p class="section-intro">La propuesta busca generar valor ambiental, productivo y económico en el municipio y su entorno.</p></div>
+ <div class="impact-grid">
+  <article class="impact-card reveal"><span>♻</span><h3>Menos desperdicio</h3><p>Disminuir la acumulación de residuos orgánicos y darles un nuevo uso.</p></article>
+  <article class="impact-card reveal"><span>⚙</span><h3>Valor local</h3><p>Convertir un residuo disponible en un recurso que puede dinamizar la economía local.</p></article>
+  <article class="impact-card reveal"><span>✳</span><h3>Economía circular</h3><p>Conectar producción, gestión de residuos y energía dentro de un mismo ciclo.</p></article>
+ </div>
+</div></section>
+<section class="cta"><div class="wrap cta-inner reveal"><div><div class="eyebrow" style="color:#2b251d">05 / Construyamos el futuro</div><h2 class="display">La energía está en lo que hoy desechamos.</h2><p>Convirtamos los residuos de nuestra región en una oportunidad para producir energía y abrir nuevas posibilidades.</p></div><a class="btn" href="#contacto">Conversemos ↗</a></div></section>
+<section class="contact wrap" id="contacto"><div class="contact-grid">
+ <div class="contact-copy reveal"><div class="eyebrow">06 / Contacto</div><h2 class="display" style="font-size:4.5rem;margin:16px 0">Hagamos<br>contacto.</h2><p>¿Eres productor, institución o estás interesado en el desarrollo de energía a partir de biomasa? Escríbenos para conversar sobre la propuesta.</p><p style="color:var(--lime)">RESIDUOELECTRIC · Energía que transforma</p></div>
+ <form class="contact-form reveal" id="contactForm">
+  <div class="field"><label for="name">Nombre</label><input id="name" name="name" required placeholder="Tu nombre"></div>
+  <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" required placeholder="tunombre@correo.com"></div>
+  <div class="field full"><label for="interest">¿Qué te interesa?</label><input id="interest" name="interest" placeholder="Ej. Alianza, suministro, proyecto"></div>
+  <div class="field full"><label for="message">Mensaje</label><textarea id="message" name="message" required placeholder="Cuéntanos brevemente..."></textarea></div>
+  <button class="btn" type="submit">Preparar mensaje ↗</button><div class="form-note" id="formNote">El botón abrirá tu aplicación de correo con el mensaje preparado. Configura el correo oficial antes de publicar.</div>
+ </form>
+</div></section>
+</main>
+<footer><div class="wrap footer-row"><div><div class="footer-brand">RESIDUOELECTRIC</div><div>Del residuo a la energía.</div></div><div>© <span id="year"></span> RESIDUOELECTRIC · Proyecto de generación con biomasa</div><a href="#inicio">Volver arriba ↑</a></div></footer>
+<script>
+const menu=document.getElementById('menu'),links=document.getElementById('navlinks');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+document.getElementById('year').textContent=new Date().getFullYear();
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('contactForm').addEventListener('submit',e=>{
+ e.preventDefault();const f=new FormData(e.target);
+ const subject=encodeURIComponent('Consulta desde RESIDUOELECTRIC');
+ const body=encodeURIComponent(`Nombre: ${f.get('name')}\nCorreo: ${f.get('email')}\nInterés: ${f.get('interest')}\n\nMensaje:\n${f.get('message')}`);
+ // Reemplaza contacto@tuempresa.com por el correo oficial antes de publicar.
+ window.location.href=`mailto:contacto@tuempresa.com?subject=${subject}&body=${body}`;
+ document.getElementById('formNote').textContent='Se está preparando el correo. Recuerda configurar la dirección oficial de contacto.';
+});
+</script>
+</body></html>
